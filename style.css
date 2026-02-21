@@ -173,6 +173,16 @@ ul {
     z-index: 1;
 }
 
+.subtitle {
+    color: var(--clr-secondary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
 .title {
     font-size: 3.5rem;
     line-height: 1.1;
@@ -180,20 +190,12 @@ ul {
     letter-spacing: -1px;
 }
 
-.subtitle {
-    color: var(--clr-text-light);
-    font-weight: 500;
-    letter-spacing: 2px;
-    margin-bottom: 1rem;
-    display: block;
-    font-size: 1.125rem;
-}
-
 .role-title {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--clr-primary);
     margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
 }
 
 .highlight {
