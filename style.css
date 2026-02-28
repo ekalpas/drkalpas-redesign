@@ -556,6 +556,7 @@ img {
   background-color: var(--color-bg-muted);
   border: 6px solid var(--color-bg);
   object-fit: cover;
+  object-position: 50% 55%;
 }
 
 @keyframes blob-morph {
@@ -1076,6 +1077,11 @@ img {
   .hero-image {
     max-width: 280px;
     margin: 0 auto;
+    border-radius: 50%;
+    animation: none !important;
+    object-position: 50% 35%;
+    aspect-ratio: 1;
+    height: auto;
   }
 
   .shape-1,
