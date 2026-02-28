@@ -1079,7 +1079,7 @@ img {
     margin: 0 auto;
     border-radius: 50%;
     animation: none !important;
-    object-position: 50% 35%;
+    object-position: 45% 45%;
     aspect-ratio: 1;
     height: auto;
   }
