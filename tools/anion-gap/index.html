@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anion Gap Calculator with Albumin Correction | Dr. Edward Kalpas</title>
+  <meta name="description" content="Free anion gap calculator with albumin correction and delta-delta ratio. Includes differential diagnosis for anion gap metabolic acidosis. By Dr. Edward Kalpas, MD." />
+  <meta name="keywords" content="anion gap calculator, metabolic acidosis, albumin corrected anion gap, delta-delta ratio, AGMA, NAGMA, MUDPILES" />
+  <link rel="canonical" href="https://drkalpas.com/tools/anion-gap/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Anion Gap Calculator | Dr. Edward Kalpas" />
+  <meta property="og:description" content="Anion gap calculator with albumin correction, delta-delta ratio, and differential diagnosis guidance." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/drkalpas-redesign/assets/anionGap-DTQjktZL.js"></script>
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/style-BAaHFR07.js">
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/calculator--zBFMLe6.js">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/style-FDPz0ChQ.css">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/tools-BOwwQlbo.css">
+</head>
+<body>
+  <div class="tool-main">
+    <div class="tool-breadcrumb">
+      <a href="/drkalpas-redesign/">Home</a> &rsaquo; <a href="/drkalpas-redesign/tools/">Clinical Tools</a> &rsaquo; Anion Gap
+    </div>
+
+    <h1 class="tool-title">Anion Gap Calculator</h1>
+    <p class="tool-description">Calculate the serum anion gap with optional albumin correction. Includes delta-delta ratio analysis and differential diagnosis guidance for metabolic acidosis workup.</p>
+
+    <div class="calc-card">
+      <h2>Enter Patient Data</h2>
+      <form id="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="sodium">Sodium (Na+) <span class="field-hint">(mEq/L)</span></label>
+            <input type="number" name="sodium" id="sodium" step="1" min="100" max="180" placeholder="140" required />
+          </div>
+          <div class="calc-field">
+            <label for="chloride">Chloride (Cl-) <span class="field-hint">(mEq/L)</span></label>
+            <input type="number" name="chloride" id="chloride" step="1" min="60" max="140" placeholder="104" required />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="bicarb">Bicarbonate (HCO3-) <span class="field-hint">(mEq/L)</span></label>
+            <input type="number" name="bicarb" id="bicarb" step="1" min="1" max="50" placeholder="24" required />
+          </div>
+          <div class="calc-field">
+            <label for="albumin">Albumin <span class="field-hint">(g/dL, optional)</span></label>
+            <input type="number" name="albumin" id="albumin" step="0.1" min="0.5" max="6" placeholder="4.0" />
+          </div>
+        </div>
+        <button type="submit" class="calc-submit">Calculate Anion Gap</button>
+      </form>
+    </div>
+
+    <div id="calc-result" class="calc-result"></div>
+
+    <div class="tool-section">
+      <h2>About the Anion Gap</h2>
+      <p>The anion gap represents unmeasured anions in the serum and is a critical tool in the evaluation of metabolic acidosis. An elevated anion gap suggests the presence of unmeasured anions such as lactate, ketoacids, uremic toxins, or toxic alcohols.</p>
+
+      <h3>Normal Values</h3>
+      <ul>
+        <li><strong>Anion Gap:</strong> 8-12 mEq/L (without potassium)</li>
+        <li><strong>Albumin-corrected AG:</strong> More accurate in hypoalbuminemia</li>
+        <li><strong>Delta-delta ratio:</strong> 1-2 (pure AGMA)</li>
+      </ul>
+
+      <h3>Elevated Anion Gap (AGMA) Differential: GOLDMARK</h3>
+      <ul>
+        <li><strong>G</strong> - Glycols (ethylene glycol, propylene glycol)</li>
+        <li><strong>O</strong> - Oxoproline (acetaminophen metabolite)</li>
+        <li><strong>L</strong> - L-lactate (most common cause)</li>
+        <li><strong>D</strong> - D-lactate (short bowel syndrome)</li>
+        <li><strong>M</strong> - Methanol</li>
+        <li><strong>A</strong> - Aspirin (salicylate toxicity)</li>
+        <li><strong>R</strong> - Renal failure (uremia)</li>
+        <li><strong>K</strong> - Ketoacidosis (DKA, starvation, alcoholic)</li>
+      </ul>
+
+      <h3>Delta-Delta Ratio Interpretation</h3>
+      <ul>
+        <li><strong>&lt; 1:</strong> Combined AGMA + non-anion gap metabolic acidosis (NAGMA)</li>
+        <li><strong>1 - 2:</strong> Pure anion gap metabolic acidosis</li>
+        <li><strong>&gt; 2:</strong> Combined AGMA + metabolic alkalosis (or pre-existing elevated HCO3-)</li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>Formulas</h2>
+      <div class="formula-box">Anion Gap = Na+ - (Cl- + HCO3-)
+
+Albumin-Corrected AG = AG + 2.5 &times; (4.0 - Albumin)
+
+Delta-Delta Ratio = (AG - 12) / (24 - HCO3-)</div>
+    </div>
+
+    <div class="tool-section">
+      <h2>References</h2>
+      <ol class="reference-list">
+        <li data-num="1.">Kraut JA, Madias NE. Serum anion gap: its uses and limitations in clinical medicine. Clin J Am Soc Nephrol. 2007;2(1):162-174.</li>
+        <li data-num="2.">Figge J, Jabor A, Kazda A, Fencl V. Anion gap and hypoalbuminemia. Crit Care Med. 1998;26(11):1807-1810.</li>
+        <li data-num="3.">Mehta AN, Emmett JB, Emmett M. GOLD MARK: an anion gap mnemonic for the 21st century. Lancet. 2008;372(9642):892.</li>
+      </ol>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="../corrected-calcium/" class="related-card">
+          <h3>Corrected Calcium</h3>
+          <p>Albumin-adjusted calcium</p>
+        </a>
+        <a href="../egfr-calculator/" class="related-card">
+          <h3>eGFR Calculator</h3>
+          <p>CKD-EPI 2021 race-free equation</p>
+        </a>
+        <a href="../meld-score/" class="related-card">
+          <h3>MELD 3.0 Score</h3>
+          <p>Liver disease severity</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

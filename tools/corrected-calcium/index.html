@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corrected Calcium Calculator | Dr. Edward Kalpas</title>
+  <meta name="description" content="Free corrected calcium calculator. Adjusts serum calcium for albumin levels using the Payne formula. Clinical interpretation included. By Dr. Edward Kalpas, MD." />
+  <meta name="keywords" content="corrected calcium calculator, albumin adjusted calcium, Payne formula, hypocalcemia, hypercalcemia, calcium correction" />
+  <link rel="canonical" href="https://drkalpas.com/tools/corrected-calcium/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Corrected Calcium Calculator | Dr. Edward Kalpas" />
+  <meta property="og:description" content="Albumin-corrected calcium calculator with clinical interpretation and differential diagnosis guidance." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/drkalpas-redesign/assets/calcium-1Gdf1Wo-.js"></script>
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/style-BAaHFR07.js">
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/calculator--zBFMLe6.js">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/style-FDPz0ChQ.css">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/tools-BOwwQlbo.css">
+</head>
+<body>
+  <div class="tool-main">
+    <div class="tool-breadcrumb">
+      <a href="/drkalpas-redesign/">Home</a> &rsaquo; <a href="/drkalpas-redesign/tools/">Clinical Tools</a> &rsaquo; Corrected Calcium
+    </div>
+
+    <h1 class="tool-title">Corrected Calcium Calculator</h1>
+    <p class="tool-description">Adjusts total serum calcium for albumin levels using the Payne formula. Essential for accurate calcium status assessment in patients with hypoalbuminemia (e.g., nephrotic syndrome, liver disease, malnutrition, critical illness).</p>
+
+    <div class="calc-card">
+      <h2>Enter Patient Data</h2>
+      <form id="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="calcium">Total Calcium <span class="field-hint">(mg/dL)</span></label>
+            <input type="number" name="calcium" id="calcium" step="0.1" min="1" max="20" placeholder="8.5" required />
+          </div>
+          <div class="calc-field">
+            <label for="albumin">Serum Albumin <span class="field-hint">(g/dL)</span></label>
+            <input type="number" name="albumin" id="albumin" step="0.1" min="0.5" max="6" placeholder="3.0" required />
+          </div>
+        </div>
+        <button type="submit" class="calc-submit">Calculate Corrected Calcium</button>
+      </form>
+    </div>
+
+    <div id="calc-result" class="calc-result"></div>
+
+    <div class="tool-section">
+      <h2>About Corrected Calcium</h2>
+      <p>About 40% of total serum calcium is bound to albumin. When albumin is low, total calcium may appear falsely low even though ionized (free) calcium is normal. The corrected calcium formula estimates what the total calcium would be if albumin were normal (4.0 g/dL).</p>
+
+      <h3>Normal Ranges</h3>
+      <ul>
+        <li><strong>Total calcium:</strong> 8.5 - 10.5 mg/dL (2.12 - 2.62 mmol/L)</li>
+        <li><strong>Ionized calcium:</strong> 4.6 - 5.3 mg/dL (1.15 - 1.33 mmol/L)</li>
+        <li><strong>Normal albumin:</strong> 3.5 - 5.5 g/dL</li>
+      </ul>
+
+      <h3>When to Use</h3>
+      <ul>
+        <li>Any patient with serum albumin &lt; 4.0 g/dL</li>
+        <li>Critically ill patients (frequent hypoalbuminemia)</li>
+        <li>Nephrotic syndrome, liver disease, malnutrition</li>
+        <li>Before diagnosing hypocalcemia or hypercalcemia</li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Ionized calcium is more accurate when available</li>
+        <li>Correction is less reliable in extreme pH abnormalities</li>
+        <li>Not validated in patients with multiple myeloma or paraproteinemia</li>
+        <li>Correction factor of 0.8 is an approximation and varies across labs</li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>Formula</h2>
+      <div class="formula-box">Corrected Ca = Measured Ca + 0.8 &times; (4.0 - Albumin)</div>
+      <p>The Payne formula adds 0.8 mg/dL of calcium for each 1.0 g/dL decrease in albumin below 4.0 g/dL.</p>
+    </div>
+
+    <div class="tool-section">
+      <h2>References</h2>
+      <ol class="reference-list">
+        <li data-num="1.">Payne RB, Little AJ, Williams RB, Milner JR. Interpretation of serum calcium in patients with abnormal serum proteins. Br Med J. 1973;4(5893):643-646.</li>
+        <li data-num="2.">Bushinsky DA, Monk RD. Electrolyte quintet: Calcium. Lancet. 1998;352(9124):306-311.</li>
+        <li data-num="3.">Clase CM, Norman GL, Beecroft ML, Churchill DN. Albumin-corrected calcium and ionized calcium in stable haemodialysis patients. Nephrol Dial Transplant. 2000;15(11):1841-1846.</li>
+      </ol>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="../egfr-calculator/" class="related-card">
+          <h3>eGFR Calculator</h3>
+          <p>CKD-EPI 2021 race-free equation</p>
+        </a>
+        <a href="../anion-gap/" class="related-card">
+          <h3>Anion Gap</h3>
+          <p>With albumin correction</p>
+        </a>
+        <a href="../meld-score/" class="related-card">
+          <h3>MELD 3.0 Score</h3>
+          <p>Liver disease severity</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

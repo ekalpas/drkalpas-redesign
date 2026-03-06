@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eGFR Calculator (CKD-EPI 2021) - Race-Free | Dr. Edward Kalpas</title>
+  <meta name="description" content="Free eGFR calculator using the 2021 CKD-EPI race-free equation. Includes CKD staging, clinical interpretation, and drug dosing guidance. By Dr. Edward Kalpas, MD." />
+  <meta name="keywords" content="eGFR calculator, CKD-EPI 2021, glomerular filtration rate, kidney function, CKD staging, race-free eGFR, creatinine clearance" />
+  <link rel="canonical" href="https://drkalpas.com/tools/egfr-calculator/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="eGFR Calculator (CKD-EPI 2021) | Dr. Edward Kalpas" />
+  <meta property="og:description" content="Race-free CKD-EPI 2021 eGFR calculator with CKD staging and clinical interpretation." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/drkalpas-redesign/assets/egfr-DmOZJhKz.js"></script>
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/style-BAaHFR07.js">
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/calculator--zBFMLe6.js">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/style-FDPz0ChQ.css">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/tools-BOwwQlbo.css">
+</head>
+<body>
+  <div class="tool-main">
+    <div class="tool-breadcrumb">
+      <a href="/drkalpas-redesign/">Home</a> &rsaquo; <a href="/drkalpas-redesign/tools/">Clinical Tools</a> &rsaquo; eGFR Calculator
+    </div>
+
+    <h1 class="tool-title">eGFR Calculator (CKD-EPI 2021)</h1>
+    <p class="tool-description">Calculate estimated glomerular filtration rate using the updated 2021 CKD-EPI equation. This race-free formula replaced the 2009 equation and eliminates the race coefficient. Includes CKD staging per KDIGO guidelines.</p>
+
+    <div class="calc-card">
+      <h2>Enter Patient Data</h2>
+      <form id="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="creatinine">Serum Creatinine <span class="field-hint">(mg/dL)</span></label>
+            <input type="number" name="creatinine" id="creatinine" step="0.01" min="0.1" max="30" placeholder="1.0" required />
+          </div>
+          <div class="calc-field">
+            <label for="age">Age <span class="field-hint">(years)</span></label>
+            <input type="number" name="age" id="age" step="1" min="18" max="120" placeholder="55" required />
+          </div>
+        </div>
+        <div class="calc-field">
+          <label for="sex">Sex</label>
+          <select name="sex" id="sex">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        </div>
+        <button type="submit" class="calc-submit">Calculate eGFR</button>
+      </form>
+    </div>
+
+    <div id="calc-result" class="calc-result"></div>
+
+    <div class="tool-section">
+      <h2>About the CKD-EPI 2021 Equation</h2>
+      <p>The 2021 CKD-EPI (Chronic Kidney Disease Epidemiology Collaboration) equation was developed to provide a race-free estimate of GFR. It was endorsed by the NKF-ASN Task Force and replaces the 2009 CKD-EPI equation that included a race coefficient.</p>
+
+      <h3>CKD Stages (KDIGO)</h3>
+      <ul>
+        <li><strong>G1:</strong> eGFR &ge; 90 mL/min/1.73m&sup2; &mdash; Normal or high</li>
+        <li><strong>G2:</strong> eGFR 60-89 &mdash; Mildly decreased</li>
+        <li><strong>G3a:</strong> eGFR 45-59 &mdash; Mildly to moderately decreased</li>
+        <li><strong>G3b:</strong> eGFR 30-44 &mdash; Moderately to severely decreased</li>
+        <li><strong>G4:</strong> eGFR 15-29 &mdash; Severely decreased</li>
+        <li><strong>G5:</strong> eGFR &lt; 15 &mdash; Kidney failure</li>
+      </ul>
+
+      <h3>Key Differences from CKD-EPI 2009</h3>
+      <ul>
+        <li>Eliminates the race coefficient entirely</li>
+        <li>Uses new coefficients derived from diverse populations</li>
+        <li>May report lower eGFR for Black patients and higher eGFR for non-Black patients compared to 2009</li>
+        <li>Endorsed by NKF, ASN, and KDIGO</li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Not validated in children (&lt;18 years), pregnant women, or AKI</li>
+        <li>Less accurate at extremes of body size or muscle mass</li>
+        <li>Creatinine-based; cystatin C-based equations may be preferred in certain populations</li>
+        <li>Does not replace measured GFR when precision is critical (e.g., kidney donation)</li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>Formula</h2>
+      <div class="formula-box">eGFR = 142 &times; min(Scr/&kappa;, 1)^&alpha; &times; max(Scr/&kappa;, 1)^(-1.200) &times; 0.9938^Age &times; (1.012 if female)
+
+Where:
+  Scr = serum creatinine (mg/dL)
+  &kappa; = 0.7 (female) or 0.9 (male)
+  &alpha; = -0.241 (female) or -0.302 (male)</div>
+    </div>
+
+    <div class="tool-section">
+      <h2>References</h2>
+      <ol class="reference-list">
+        <li data-num="1.">Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. N Engl J Med. 2021;385(19):1737-1749.</li>
+        <li data-num="2.">Delgado C, Bowe B, Masson S, et al. A unifying approach for GFR estimation: recommendations of the NKF-ASN Task Force on Reassessing the Inclusion of Race in Diagnosing Kidney Disease. Am J Kidney Dis. 2022;79(2):268-288.</li>
+        <li data-num="3.">KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney Int. 2024;105(4S):S117-S314.</li>
+      </ol>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="../corrected-calcium/" class="related-card">
+          <h3>Corrected Calcium</h3>
+          <p>Albumin-adjusted calcium for CKD</p>
+        </a>
+        <a href="../anion-gap/" class="related-card">
+          <h3>Anion Gap</h3>
+          <p>With albumin correction</p>
+        </a>
+        <a href="../meld-score/" class="related-card">
+          <h3>MELD 3.0 Score</h3>
+          <p>Liver disease severity</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

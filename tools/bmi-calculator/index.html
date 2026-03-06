@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator - Body Mass Index | Dr. Edward Kalpas</title>
+  <meta name="description" content="Free BMI calculator with WHO classification, clinical interpretation, and ethnic-specific cutoffs. By Dr. Edward Kalpas, MD, MAS, MPH." />
+  <meta name="keywords" content="BMI calculator, body mass index, BMI chart, obesity calculator, weight classification, WHO BMI categories" />
+  <link rel="canonical" href="https://drkalpas.com/tools/bmi-calculator/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="BMI Calculator | Dr. Edward Kalpas" />
+  <meta property="og:description" content="Calculate BMI with WHO classification, clinical interpretation, and ethnic-specific cutoffs." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/drkalpas-redesign/assets/bmi-DWOo4OlL.js"></script>
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/style-BAaHFR07.js">
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/calculator--zBFMLe6.js">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/style-FDPz0ChQ.css">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/tools-BOwwQlbo.css">
+</head>
+<body>
+  <div class="tool-main">
+    <div class="tool-breadcrumb">
+      <a href="/drkalpas-redesign/">Home</a> &rsaquo; <a href="/drkalpas-redesign/tools/">Clinical Tools</a> &rsaquo; BMI Calculator
+    </div>
+
+    <h1 class="tool-title">BMI Calculator</h1>
+    <p class="tool-description">Calculate Body Mass Index (BMI) using the standard WHO formula. Includes clinical interpretation with WHO weight categories and ethnic-specific cutoffs for Asian populations.</p>
+
+    <div class="calc-card">
+      <h2>Enter Patient Data</h2>
+      <form id="calc-form">
+        <div class="calc-field">
+          <label for="unit">Unit System</label>
+          <select name="unit" id="unit">
+            <option value="metric">Metric (kg, cm)</option>
+            <option value="imperial">Imperial (lbs, in)</option>
+          </select>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="weight">Weight <span class="field-hint" id="weight-hint">(kg)</span></label>
+            <input type="number" name="weight" id="weight" step="0.1" min="1" max="700" placeholder="70" required />
+          </div>
+          <div class="calc-field">
+            <label for="height">Height <span class="field-hint" id="height-hint">(cm)</span></label>
+            <input type="number" name="height" id="height" step="0.1" min="1" max="300" placeholder="175" required />
+          </div>
+        </div>
+        <button type="submit" class="calc-submit">Calculate BMI</button>
+      </form>
+    </div>
+
+    <div id="calc-result" class="calc-result"></div>
+
+    <div class="tool-section">
+      <h2>About BMI</h2>
+      <p>Body Mass Index (BMI) is a simple measure of body fat based on height and weight. While BMI does not measure body fat directly, it correlates moderately well with more direct measures of body fat and is a useful screening tool for weight categories that may lead to health problems.</p>
+
+      <h3>WHO Weight Categories</h3>
+      <ul>
+        <li><strong>Underweight:</strong> BMI &lt; 18.5 kg/m&sup2;</li>
+        <li><strong>Normal weight:</strong> BMI 18.5 - 24.9 kg/m&sup2;</li>
+        <li><strong>Overweight:</strong> BMI 25.0 - 29.9 kg/m&sup2;</li>
+        <li><strong>Obesity Class I:</strong> BMI 30.0 - 34.9 kg/m&sup2;</li>
+        <li><strong>Obesity Class II:</strong> BMI 35.0 - 39.9 kg/m&sup2;</li>
+        <li><strong>Obesity Class III:</strong> BMI &ge; 40.0 kg/m&sup2;</li>
+      </ul>
+
+      <h3>Ethnic-Specific Cutoffs</h3>
+      <p>The WHO recommends lower BMI cutoffs for Asian populations, where metabolic risk begins at lower BMI values. For Asian adults, overweight is defined as BMI &ge; 23 kg/m&sup2; and obesity as BMI &ge; 27.5 kg/m&sup2;.</p>
+
+      <h3>Limitations</h3>
+      <ul>
+        <li>Does not distinguish between lean mass and fat mass</li>
+        <li>May overestimate body fat in athletes and muscular individuals</li>
+        <li>May underestimate body fat in elderly individuals with sarcopenia</li>
+        <li>Not validated for children or pregnant women (use age/sex-specific charts)</li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>Formula</h2>
+      <div class="formula-box">BMI = weight (kg) / height (m)&sup2;</div>
+      <p>For imperial units: BMI = 703 &times; weight (lbs) / height (in)&sup2;</p>
+    </div>
+
+    <div class="tool-section">
+      <h2>References</h2>
+      <ol class="reference-list">
+        <li data-num="1.">WHO Expert Consultation. Appropriate body-mass index for Asian populations and its implications for policy and intervention strategies. Lancet. 2004;363(9403):157-163.</li>
+        <li data-num="2.">WHO. Obesity: preventing and managing the global epidemic. WHO Technical Report Series 894. Geneva: World Health Organization; 2000.</li>
+        <li data-num="3.">Flegal KM, Kit BK, Orpana H, Graubard BI. Association of all-cause mortality with overweight and obesity using standard body mass index categories. JAMA. 2013;309(1):71-82.</li>
+      </ol>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="../egfr-calculator/" class="related-card">
+          <h3>eGFR Calculator</h3>
+          <p>CKD-EPI 2021 race-free equation</p>
+        </a>
+        <a href="../corrected-calcium/" class="related-card">
+          <h3>Corrected Calcium</h3>
+          <p>Albumin-adjusted calcium</p>
+        </a>
+        <a href="../anion-gap/" class="related-card">
+          <h3>Anion Gap</h3>
+          <p>With albumin correction</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+import"./style-BAaHFR07.js";/* empty css              */import{i as p,c as u}from"./calculator--zBFMLe6.js";p({title:"MELD 3.0 Score Calculator",description:"Calculate MELD 3.0 score for liver disease severity and transplant prioritization.",category:"End-Stage Liver Disease",keywords:"MELD 3.0, MELD score, liver transplant, liver disease, MELD-Na",datePublished:"2026-03-05",dateModified:"2026-03-05"});u({fields:[{name:"bilirubin",min:.1,max:100},{name:"inr",min:.5,max:20},{name:"creatinine",min:.1,max:15},{name:"sodium",min:100,max:180},{name:"albumin",min:.5,max:6},{name:"sex"}],calculate(e){const s=e.sex==="female",n=document.getElementById("dialysis").checked;let o=Math.max(e.bilirubin,1),c=Math.max(e.inr,1),a=Math.max(e.creatinine,1);a=Math.min(a,n?4:3),n&&(a=Math.max(a,3));let m=Math.max(Math.min(e.sodium,137),125),d=Math.max(Math.min(e.albumin,3.5),1.5),i=(s?1.33:0)+4.56*Math.log(o)+.82*(137-m)-.24*(137-m)*Math.log(o)+9.09*Math.log(c)+11.14*Math.log(a)+1.85*(3.5-d)-1.83*(3.5-d)*Math.log(a)+6;i=Math.round(i),i=Math.max(6,Math.min(40,i));let t,l,r;return i<10?(t="normal",r="~2%",l="Low MELD score. 3-month waitlist mortality approximately 2%. Continue monitoring and standard hepatology follow-up."):i<20?(t="mild",r="~6%",l="Moderate liver disease severity. 3-month waitlist mortality approximately 6%. Regular monitoring and transplant evaluation as needed."):i<30?(t="moderate",r="~20%",l="Significant liver disease. 3-month waitlist mortality approximately 20%. Active transplant listing typically pursued. Aggressive management of complications (ascites, variceal bleeding, hepatic encephalopathy)."):i<40?(t="severe",r="50-80%",l="Severe liver disease. 3-month waitlist mortality 50-80%. High priority for transplant allocation. ICU-level care may be required. Evaluate for bridge therapies."):(t="critical",r=">70%",l="Critical liver disease (MELD 40, maximum score). 3-month mortality exceeds 70%. Highest transplant allocation priority. Consider acute-on-chronic liver failure protocols."),{meld:i,severity:t,interpretation:l,mortality:r,isFemale:s,onDialysis:n}},resultTemplate(e){return`
+          <div class="result-value">MELD 3.0: ${e.meld}</div>
+          <div class="result-label">3-Month Waitlist Mortality: ${e.mortality}</div>
+          <div class="result-interpretation"><p>${e.interpretation}</p></div>
+          <div class="result-details">
+            <dl>
+              <dt>Sex Adjustment</dt>
+              <dd>${e.isFemale?"+1.33 points (female)":"None (male)"}</dd>
+              <dt>Dialysis</dt>
+              <dd>${e.onDialysis?"Yes (Cr set to minimum 3.0, capped at 4.0)":"No"}</dd>
+            </dl>
+          </div>
+        `}});

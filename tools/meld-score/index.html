@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MELD 3.0 Score Calculator (2022) | Dr. Edward Kalpas</title>
+  <meta name="description" content="Free MELD 3.0 score calculator using the updated 2022 formula with sex, albumin, and revised coefficients. For liver transplant prioritization. By Dr. Edward Kalpas, MD." />
+  <meta name="keywords" content="MELD 3.0 calculator, MELD score, liver transplant, end-stage liver disease, MELD-Na, liver disease severity" />
+  <link rel="canonical" href="https://drkalpas.com/tools/meld-score/" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="MELD 3.0 Score Calculator | Dr. Edward Kalpas" />
+  <meta property="og:description" content="Updated MELD 3.0 (2022) calculator with sex-specific coefficients and albumin for liver transplant prioritization." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/drkalpas-redesign/assets/meld-B8IM7lS5.js"></script>
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/style-BAaHFR07.js">
+  <link rel="modulepreload" crossorigin href="/drkalpas-redesign/assets/calculator--zBFMLe6.js">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/style-FDPz0ChQ.css">
+  <link rel="stylesheet" crossorigin href="/drkalpas-redesign/assets/tools-BOwwQlbo.css">
+</head>
+<body>
+  <div class="tool-main">
+    <div class="tool-breadcrumb">
+      <a href="/drkalpas-redesign/">Home</a> &rsaquo; <a href="/drkalpas-redesign/tools/">Clinical Tools</a> &rsaquo; MELD 3.0 Score
+    </div>
+
+    <h1 class="tool-title">MELD 3.0 Score Calculator</h1>
+    <p class="tool-description">Calculate the updated MELD 3.0 score (2022) for liver disease severity and transplant prioritization. This version incorporates sex-based coefficients and albumin, replacing MELD-Na for improved accuracy and reduced sex-based disparities.</p>
+
+    <div class="calc-card">
+      <h2>Enter Patient Data</h2>
+      <form id="calc-form">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="bilirubin">Total Bilirubin <span class="field-hint">(mg/dL)</span></label>
+            <input type="number" name="bilirubin" id="bilirubin" step="0.1" min="0.1" max="100" placeholder="1.2" required />
+          </div>
+          <div class="calc-field">
+            <label for="inr">INR</label>
+            <input type="number" name="inr" id="inr" step="0.1" min="0.5" max="20" placeholder="1.1" required />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="creatinine">Serum Creatinine <span class="field-hint">(mg/dL)</span></label>
+            <input type="number" name="creatinine" id="creatinine" step="0.1" min="0.1" max="15" placeholder="1.0" required />
+          </div>
+          <div class="calc-field">
+            <label for="sodium">Sodium <span class="field-hint">(mEq/L)</span></label>
+            <input type="number" name="sodium" id="sodium" step="1" min="100" max="180" placeholder="137" required />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="albumin">Albumin <span class="field-hint">(g/dL)</span></label>
+            <input type="number" name="albumin" id="albumin" step="0.1" min="0.5" max="6" placeholder="3.5" required />
+          </div>
+          <div class="calc-field">
+            <label for="sex">Sex</label>
+            <select name="sex" id="sex">
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-field">
+          <label>
+            <input type="checkbox" name="dialysis" id="dialysis" value="yes" style="width:auto;margin-right:8px" />
+            Dialysis at least twice in the past week or 24h CVVHD
+          </label>
+        </div>
+        <button type="submit" class="calc-submit">Calculate MELD 3.0</button>
+      </form>
+    </div>
+
+    <div id="calc-result" class="calc-result"></div>
+
+    <div class="tool-section">
+      <h2>About MELD 3.0</h2>
+      <p>MELD 3.0 was introduced in 2022 by Kim et al. to address sex-based disparities in liver transplant allocation. The original MELD score disadvantaged women because creatinine values are generally lower in females. MELD 3.0 adds sex-specific interaction terms and incorporates serum albumin.</p>
+
+      <h3>Key Improvements Over MELD-Na</h3>
+      <ul>
+        <li>Adds sex-based coefficient (1.33 points added for female patients)</li>
+        <li>Incorporates serum albumin as a variable</li>
+        <li>Better calibrated for 90-day waitlist mortality prediction</li>
+        <li>Reduces sex-based disparity in transplant allocation</li>
+        <li>Adopted by OPTN/UNOS for U.S. organ allocation (effective 2023)</li>
+      </ul>
+
+      <h3>Score Interpretation</h3>
+      <ul>
+        <li><strong>MELD &lt; 10:</strong> Low severity. 3-month mortality ~2%</li>
+        <li><strong>MELD 10-19:</strong> Moderate severity. 3-month mortality ~6%</li>
+        <li><strong>MELD 20-29:</strong> High severity. 3-month mortality ~20%</li>
+        <li><strong>MELD 30-39:</strong> Very high severity. 3-month mortality ~50-80%</li>
+        <li><strong>MELD &ge; 40:</strong> Critical. 3-month mortality &gt;70%</li>
+      </ul>
+
+      <h3>Constraints</h3>
+      <ul>
+        <li>Lab values are bounded: creatinine capped at 3.0 mg/dL (4.0 if on dialysis), minimum values of 1.0 for bilirubin, INR, and creatinine</li>
+        <li>Sodium bounded: 125-137 mEq/L</li>
+        <li>Albumin bounded: 1.5-3.5 g/dL</li>
+        <li>Final score rounded to nearest integer, minimum 6, maximum 40</li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>Formula</h2>
+      <div class="formula-box">MELD 3.0 = 1.33 (if female)
+  + 4.56 &times; ln(bilirubin)
+  + 0.82 &times; (137 - Na) - 0.24 &times; (137 - Na) &times; ln(bilirubin)
+  + 9.09 &times; ln(INR)
+  + 11.14 &times; ln(creatinine)
+  + 1.85 &times; (3.5 - albumin)
+  - 1.83 &times; (3.5 - albumin) &times; ln(creatinine)
+  + 6
+
+Bounds: Bilirubin, INR, Cr &gt;= 1.0; Cr &lt;= 3.0 (4.0 if dialysis)
+        Na: 125-137; Albumin: 1.5-3.5; Score: 6-40</div>
+    </div>
+
+    <div class="tool-section">
+      <h2>References</h2>
+      <ol class="reference-list">
+        <li data-num="1.">Kim WR, Mannalithara A, Heimbach JK, et al. MELD 3.0: The Model for End-Stage Liver Disease Updated for the Modern Era. Gastroenterology. 2021;161(6):1887-1895.e4.</li>
+        <li data-num="2.">OPTN/UNOS. Implementation of MELD 3.0. Organ Procurement and Transplantation Network. 2023.</li>
+        <li data-num="3.">Kamath PS, Kim WR. The Model for End-Stage Liver Disease (MELD). Hepatology. 2007;45(3):797-805.</li>
+      </ol>
+    </div>
+
+    <div class="related-tools">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="../egfr-calculator/" class="related-card">
+          <h3>eGFR Calculator</h3>
+          <p>CKD-EPI 2021 race-free equation</p>
+        </a>
+        <a href="../corrected-calcium/" class="related-card">
+          <h3>Corrected Calcium</h3>
+          <p>Albumin-adjusted calcium</p>
+        </a>
+        <a href="../anion-gap/" class="related-card">
+          <h3>Anion Gap</h3>
+          <p>With albumin correction</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
