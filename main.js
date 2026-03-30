@@ -14,7 +14,7 @@ const createStaticFormMessage = () => {
 
   staticFormMessage.setAttribute('role', 'status');
   staticFormMessage.setAttribute('aria-live', 'polite');
-  staticFormMessage.textContent = 'This contact form is a static preview. Your message has been kept in place.';
+  staticFormMessage.textContent = 'This contact form is a static demo. Your text stays in the form.';
   staticFormMessage.dataset.contactNotice = 'true';
 
   Object.assign(staticFormMessage.style, {
@@ -48,7 +48,7 @@ if (contactForm) {
     contactForm.insertAdjacentElement('afterend', staticFormMessage);
 
     if (submitButton) {
-      submitButton.textContent = 'Preview saved locally';
+      submitButton.textContent = 'Static demo only';
     }
   });
 }
