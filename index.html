@@ -22,7 +22,7 @@
   <header class="site-header" id="top">
     <div class="container header-shell">
       <a class="wordmark" href="#top" aria-label="Dr. Edward Kalpas home">EK</a>
-      <nav class="site-nav" aria-label="Primary">
+      <nav class="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
@@ -182,18 +182,20 @@
             executive advisory opportunities.
           </p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" aria-labelledby="contact-form-title" aria-describedby="contact-form-note">
+          <h3 id="contact-form-title" class="contact-form-title">Send a message</h3>
+          <p id="contact-form-note" class="contact-form-note">All fields are required. This form is a static demo and does not send email.</p>
           <label>
             <span>Name</span>
-            <input type="text" name="name" autocomplete="name" />
+            <input type="text" name="name" autocomplete="name" required />
           </label>
           <label>
             <span>Email</span>
-            <input type="email" name="email" autocomplete="email" />
+            <input type="email" name="email" autocomplete="email" inputmode="email" required />
           </label>
           <label>
             <span>Message</span>
-            <textarea name="message" rows="5"></textarea>
+            <textarea name="message" rows="5" required></textarea>
           </label>
           <button class="btn btn-primary" type="submit">Send Message</button>
         </form>
