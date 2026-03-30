@@ -1,10 +1,12 @@
-// Add scroll event listener to navbar
-const navbar = document.getElementById('navbar');
+const siteHeader = document.querySelector('.site-header');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+const updateHeaderScrollState = () => {
+  if (!siteHeader) {
+    return;
   }
-});
+
+  siteHeader.classList.toggle('scrolled', window.scrollY > 50);
+};
+
+window.addEventListener('scroll', updateHeaderScrollState);
+updateHeaderScrollState();
