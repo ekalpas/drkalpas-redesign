@@ -9,52 +9,46 @@ const updateHeaderScrollState = () => {
   siteHeader.classList.toggle('scrolled', window.scrollY > 50);
 };
 
-const createSuccessMessage = () => {
-  const successMessage = document.createElement('p');
+const createStaticFormMessage = () => {
+  const staticFormMessage = document.createElement('p');
 
-  successMessage.setAttribute('role', 'status');
-  successMessage.setAttribute('aria-live', 'polite');
-  successMessage.textContent = 'Thanks. Your message has been sent successfully.';
-  successMessage.dataset.contactSuccess = 'true';
+  staticFormMessage.setAttribute('role', 'status');
+  staticFormMessage.setAttribute('aria-live', 'polite');
+  staticFormMessage.textContent = 'This contact form is a static preview. Your message has been kept in place.';
+  staticFormMessage.dataset.contactNotice = 'true';
 
-  Object.assign(successMessage.style, {
+  Object.assign(staticFormMessage.style, {
     marginTop: 'var(--space-3)',
     padding: '0.9rem 1rem',
     borderRadius: 'var(--radius-sm)',
-    border: '1px solid rgba(86, 129, 82, 0.28)',
-    background: 'rgba(86, 129, 82, 0.12)',
+    border: '1px solid rgba(139, 107, 63, 0.24)',
+    background: 'rgba(139, 107, 63, 0.1)',
     color: 'var(--color-ink)',
     fontWeight: '600',
   });
 
-  return successMessage;
+  return staticFormMessage;
 };
 
 window.addEventListener('scroll', updateHeaderScrollState, { passive: true });
 updateHeaderScrollState();
 
 if (contactForm) {
-  let successMessage;
+  let staticFormMessage;
+  const submitButton = contactForm.querySelector('button[type="submit"]');
 
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (successMessage) {
-      successMessage.remove();
+    if (staticFormMessage) {
+      staticFormMessage.remove();
     }
 
-    contactForm.reset();
+    staticFormMessage = createStaticFormMessage();
+    contactForm.insertAdjacentElement('afterend', staticFormMessage);
 
-    successMessage = createSuccessMessage();
-    contactForm.insertAdjacentElement('afterend', successMessage);
-  });
-
-  contactForm.addEventListener('input', () => {
-    if (!successMessage) {
-      return;
+    if (submitButton) {
+      submitButton.textContent = 'Preview saved locally';
     }
-
-    successMessage.remove();
-    successMessage = undefined;
   });
 }
