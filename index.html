@@ -182,9 +182,11 @@
             executive advisory opportunities.
           </p>
         </div>
-        <form class="contact-form" aria-labelledby="contact-form-title" aria-describedby="contact-form-note">
+        <form class="contact-form" aria-labelledby="contact-form-title" aria-describedby="contact-form-note" action="https://formspree.io/f/xbdazrlb" method="POST">
+          <!-- Spam Protection (Honeypot) -->
+          <input type="text" name="_gotcha" style="display:none" />
           <h3 id="contact-form-title" class="contact-form-title">Send a message</h3>
-          <p id="contact-form-note" class="contact-form-note">All fields are required. This form is a static demo and does not send email.</p>
+          <p id="contact-form-note" class="contact-form-note">All fields are required.</p>
           <label>
             <span>Name</span>
             <input type="text" name="name" autocomplete="name" required />
