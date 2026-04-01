@@ -17,31 +17,26 @@ npm run build
 
 ## Deployment
 
-Production hosting is on Vercel.
+Production hosting is on Vercel. Deploys automatically on push to `main`.
 
-- Production project: `drkalpas-deploy`
+- Vercel project: `drkalpas-redesign`
+- Vercel team: `ekalpas-projects`
 - Production domain: `drkalpas.com`
 - Framework preset: `Vite`
 - Build command: `npm run build`
-
-Current deployment workflow:
-
-1. Merge approved changes into `main`
-2. Push `main` to GitHub
-3. Deploy to Vercel production for the `drkalpas-deploy` project
-4. Verify `drkalpas.com` points at the new production deployment
+- Git integration: `ekalpas/drkalpas-redesign`, `main` branch
 
 Useful Vercel commands:
 
 ```bash
 vercel whoami
-vercel project inspect drkalpas-deploy
-vercel deploy --prod --yes
-vercel inspect drkalpas.com
-vercel alias set <deployment-url> drkalpas.com
+vercel inspect drkalpas.com --scope ekalpas-projects
+vercel deploy --prod --yes --scope ekalpas-projects
+vercel domains ls --scope ekalpas-projects
 ```
 
 ## Notes
 
 - The `.vercel/` directory is local-only and should not be committed.
-- The `gh-pages` script and `homepage` field in `package.json` are legacy settings and are not the production deployment path for `drkalpas.com`.
+- The `gh-pages` script and `homepage` field in `package.json` are legacy settings.
+- Domain was previously assigned to an old `drkalpas-deploy` project. Moved to `drkalpas-redesign` on 2026-03-31.
