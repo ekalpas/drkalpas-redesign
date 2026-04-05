@@ -154,7 +154,7 @@ textarea {
 
 .section {
   position: relative;
-  padding: var(--space-9) 0;
+  padding: var(--space-8) 0;
 }
 
 .section::before {
@@ -297,14 +297,14 @@ textarea {
 }
 
 .hero {
-  padding-top: clamp(4.5rem, 12vw, 7rem);
-  padding-bottom: var(--space-8);
+  padding-top: clamp(3rem, 8vw, 5rem);
+  padding-bottom: var(--space-7);
 }
 
 .hero-grid {
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   align-items: center;
-  min-height: calc(100vh - 5.5rem);
+  min-height: calc(85vh - 5.5rem);
 }
 
 .hero-copy {
@@ -659,7 +659,7 @@ textarea {
 
 @media (max-width: 900px) {
   .section {
-    padding: var(--space-8) 0;
+    padding: var(--space-7) 0;
   }
 
   .hero-grid,
