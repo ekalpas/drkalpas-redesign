@@ -559,8 +559,7 @@ textarea {
 .stat {
   display: grid;
   gap: var(--space-3);
-  align-content: end;
-  min-height: 12rem;
+  align-content: start;
   padding: var(--space-5);
 }
 
@@ -569,7 +568,7 @@ textarea {
   font-size: clamp(2.8rem, 2.3rem + 2vw, 4.75rem);
   font-weight: 600;
   letter-spacing: -0.04em;
-  line-height: 0.95;
+  line-height: 1;
 }
 
 .stat span {
@@ -790,9 +789,6 @@ textarea {
     padding: var(--space-5);
   }
 
-  .stat {
-    min-height: 10rem;
-  }
 }
 
 .faq-stack {
