@@ -826,22 +826,28 @@ textarea {
 }
 
 .faq-item summary::after {
-  content: "+";
+  content: "";
   flex: 0 0 auto;
   width: 1.75rem;
   height: 1.75rem;
-  display: grid;
-  place-items: center;
+  position: relative;
   border-radius: 50%;
   background: var(--color-accent-soft);
-  color: var(--color-accent);
-  font-size: 1.15rem;
-  font-weight: 700;
+}
+
+.faq-item summary::after {
+  background-image:
+    linear-gradient(var(--color-accent), var(--color-accent)),
+    linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0.75rem 2px, 2px 0.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: transform var(--transition-base);
 }
 
 .faq-item[open] summary::after {
-  transform: rotate(45deg);
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0.75rem 2px;
 }
 
 .faq-item summary:hover {
