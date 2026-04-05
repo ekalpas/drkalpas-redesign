@@ -1,5 +1,4 @@
 const siteHeader = document.querySelector('.site-header');
-const contactForm = document.querySelector('.contact-form');
 
 const updateHeaderScrollState = () => {
   if (!siteHeader) {
