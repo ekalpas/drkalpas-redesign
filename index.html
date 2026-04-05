@@ -23,6 +23,126 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://drkalpas.com/#person",
+        "name": "Edward Kalpas",
+        "honorificPrefix": "Dr.",
+        "honorificSuffix": "MD, MAS, MPH",
+        "jobTitle": "Chief Medical Officer",
+        "description": "Physician executive and healthcare AI advisor specializing in clinical informatics, quality improvement, and operational strategy for health systems.",
+        "url": "https://drkalpas.com",
+        "image": "https://drkalpas.com/headshot.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/edkalpas/"
+        ],
+        "worksFor": {
+          "@type": "MedicalOrganization",
+          "name": "Peach Tree Healthcare",
+          "url": "https://www.peachtreehealthcare.org"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Uniformed Services University of the Health Sciences"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Columbia University Mailman School of Public Health"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Arizona State University"
+          }
+        ],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Doctor of Medicine (MD)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Master of Advanced Study in Health Informatics (MAS)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Master of Public Health (MPH)" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "board-certification", "name": "Preventive Medicine" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "board-certification", "name": "Clinical Informatics" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "board-certification", "name": "Lifestyle Medicine" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified Physician Executive (CPE)" }
+        ],
+        "knowsAbout": [
+          "Healthcare AI",
+          "Clinical Informatics",
+          "Generative AI in Healthcare",
+          "EHR Optimization",
+          "Quality Improvement",
+          "Value-Based Care",
+          "Clinical Decision Support",
+          "FQHC Operations",
+          "Physician Executive Leadership",
+          "Ambient AI Documentation"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://drkalpas.com/#service",
+        "name": "Dr. Edward Kalpas - Healthcare AI Advisory",
+        "description": "Strategic advisory services for health systems navigating AI adoption, clinical informatics, quality improvement, and executive medical leadership.",
+        "url": "https://drkalpas.com",
+        "provider": { "@id": "https://drkalpas.com/#person" },
+        "serviceType": ["Healthcare AI Consulting", "Clinical Informatics Advisory", "Physician Executive Coaching", "Quality Improvement Strategy"],
+        "areaServed": "US"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://drkalpas.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does Dr. Edward Kalpas specialize in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dr. Kalpas specializes in healthcare AI strategy, clinical informatics, quality improvement, and physician executive leadership. He advises health systems on deploying generative AI in clinical environments, optimizing EHR workflows, and building operational strategy aligned to value-based care."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are Dr. Kalpas's credentials?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dr. Kalpas holds an MD from the Uniformed Services University, an MPH from Columbia University, and an MAS in Health Informatics from Arizona State University. He is board certified in Preventive Medicine, Clinical Informatics, and Lifestyle Medicine, and is a Certified Physician Executive (CPE)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What kind of organizations does Dr. Kalpas work with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dr. Kalpas works with health systems, FQHCs, hospital networks, and healthcare organizations navigating clinical complexity and AI-driven change. He has held CMO and CMIO roles at Peach Tree Healthcare, Yavapai County Community Health Services, and HonorHealth."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I work with Dr. Kalpas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dr. Kalpas is available for consulting, speaking, and strategic advisory engagements. Contact him through the form at drkalpas.com or connect on LinkedIn."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://drkalpas.com",
+        "name": "Dr. Edward Kalpas",
+        "description": "Healthcare AI advisor and physician executive",
+        "author": { "@id": "https://drkalpas.com/#person" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-copy", "#about .prose-block", "#faq"]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -35,6 +155,7 @@
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#impact">Impact</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-cta" href="#contact">Work With Me</a>
@@ -81,17 +202,22 @@
         <div class="prose-block">
           <p>
             Dr. Edward Kalpas is a physician executive with more than two decades of experience spanning
-            clinical medicine, informatics, quality improvement, and public-sector leadership.
+            clinical medicine, informatics, quality improvement, and public-sector leadership. He is
+            board certified in Preventive Medicine, Clinical Informatics, and Lifestyle Medicine.
           </p>
           <p>
-            His work focuses on helping organizations translate complex clinical and operational
-            challenges into measurable improvements in access, efficiency, and quality.
+            His work focuses on helping health systems and FQHCs deploy AI responsibly, optimize EHR
+            workflows, and translate complex clinical and operational challenges into measurable
+            improvements in access, efficiency, and quality. He has authored five peer-reviewed
+            publications and held CMO and CMIO roles across hospital systems, public health agencies,
+            and federally qualified health centers.
           </p>
           <ul class="credential-list">
             <li>MD, Uniformed Services University</li>
             <li>MPH, Columbia University</li>
-            <li>MAS, Arizona State University</li>
-            <li>Certified Physician Executive</li>
+            <li>MAS in Health Informatics, Arizona State University</li>
+            <li>Certified Physician Executive (CPE)</li>
+            <li>Board Certified: Preventive Medicine, Clinical Informatics, Lifestyle Medicine</li>
           </ul>
         </div>
       </div>
@@ -176,6 +302,33 @@
             <strong>3</strong>
             <span>Advanced degrees</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-intro">
+          <p class="eyebrow">FAQ</p>
+          <h2>Common questions about working together.</h2>
+        </div>
+        <div class="faq-stack">
+          <details class="faq-item">
+            <summary>What does Dr. Kalpas specialize in?</summary>
+            <p>Dr. Kalpas specializes in healthcare AI strategy, clinical informatics, quality improvement, and physician executive leadership. He advises health systems on deploying generative AI in clinical environments, optimizing EHR workflows, and building operational strategy aligned to value-based care.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are Dr. Kalpas's credentials?</summary>
+            <p>Dr. Kalpas holds an MD from the Uniformed Services University, an MPH from Columbia University, and an MAS in Health Informatics from Arizona State University. He is board certified in Preventive Medicine, Clinical Informatics, and Lifestyle Medicine, and is a Certified Physician Executive (CPE). He has authored five peer-reviewed publications.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What kind of organizations does Dr. Kalpas work with?</summary>
+            <p>Dr. Kalpas works with health systems, FQHCs, hospital networks, and healthcare organizations navigating clinical complexity and AI-driven change. He has held CMO and CMIO roles at Peach Tree Healthcare, Yavapai County Community Health Services, and HonorHealth.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I engage Dr. Kalpas for consulting or speaking?</summary>
+            <p>Dr. Kalpas is available for consulting, speaking, and strategic advisory engagements focused on healthcare AI, clinical informatics, and physician leadership. Use the contact form below or connect on <a href="https://www.linkedin.com/in/edkalpas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+          </details>
         </div>
       </div>
     </section>
